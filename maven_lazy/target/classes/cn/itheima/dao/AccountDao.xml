@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- sql配置文件的约束 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itheima.dao.AccountDao">   
+	
+	<!-- 查询所有账户 
+			配置延迟加载：
+				1.在对象中使用包含关系描述表关系
+				2.使用resultMap配置返回结果的映射关系
+	-->
+	<select id="findAccountsById" parameterType="int" resultType="acount">
+		select * from account where uid=#{uid}
+	</select>
+	
+</mapper>   
